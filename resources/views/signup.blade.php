@@ -1,6 +1,10 @@
 @extends('layout.master')
 
-@section('title')
+
+@section('title','Sign Up - HandMarket ')
+
+
+@section('titulo')
 
 <div id="titulo">
 
@@ -11,9 +15,25 @@
 @endsection
 
 @section('styles')
+
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @endsection
 
 @section('content')
+
+<style>
+    .navbar{
+        background: inherit !important }
+
+    footer{
+        background: inherit !important;
+        width: 100% !important;
+    }
+
+    section{
+        background: inherit !important;
+    }
+</style>
 
 <section id="hero" class="d-flex align-items-center">
 
