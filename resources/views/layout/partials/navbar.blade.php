@@ -20,6 +20,9 @@
         <li class="nav-item">
             <a href="#" class="nav-link">Loja</a>
         </li>
+        <li class="nav-item">
+            <a href="{{ route('signup')}}" class="nav-link">signup</a>
+        </li>
     </ul>
     <div class="hamburger">
         <span class="bar"></span>

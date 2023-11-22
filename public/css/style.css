@@ -1,0 +1,197 @@
+.navbare{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    height: 700px;
+    background: linear-gradient(180deg, #0D68AA 29.89%, rgba(217, 217, 217, 0.00) 100%);
+}
+
+body{
+    margin: 0px;
+    background: linear-gradient(to right, #3498db, #e74c3c);
+}
+
+a{
+    text-decoration: none;
+}
+
+#menuCima{
+    height: 100px;
+    width: 100%;
+}
+
+#logtipo{
+    width: 400px;
+    height: 65px;
+    margin: 40px 40px 0px 100px;
+}
+
+#menuEsq{
+    width: 700px;
+    text-align: center;
+    font-family: 'Itim', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    float: right;
+    margin-top: -70px;
+}
+
+#artigo{
+    width: 100px;
+    color: white !important;
+    padding: 5px;
+    display: inline-block;
+}
+
+#artigo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #3498db, #e74c3c);
+    transition: opacity 0.5s ease; /* Usamos a propriedade opacity para controlar a transição da cor */
+    z-index: -1;
+    opacity: 0; /* Começa com opacidade 0 para não ser visível inicialmente */
+}
+
+#artigo:hover::before {
+    opacity: 1; /* Quando hover, torna o gradiente visível */
+}
+
+
+#form {
+    position: relative;
+    width: 1248px;
+    height: 385px;
+    border-radius: 70px;
+    background: #FFF;
+    margin-top: -300px;
+    color: black !important;
+    margin-left: 16%;
+    z-index: 0;
+}
+
+#form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Garante que a borda do pseudo-elemento corresponda à do elemento pai */
+    background: inherit; /* Herda a cor de fundo do formulário */
+    filter: blur(20px);
+    z-index: -1;
+}
+
+#form-content {
+    position: relative;
+    z-index: 1;
+}
+
+#inputNome, #inputPass, #inputEmail, #inputTelefone{
+    
+    border-radius: 50px;
+    border: 5px solid #0D68AA;
+    background: #D9D9D9;
+}
+
+#labelNome, #inputNome, #inputPass, #labelPass, #labelTelefone, #inputTelefone, #labelEmail, #inputEmail{
+    height: 50px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Itim', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+}
+
+#labelPass, #labelEmail{
+    margin-top: 50px;
+}
+
+#ladoEsq{
+    float: left;
+    width: 43%;
+    padding: 40px;
+}
+
+#ladoDir{
+    float: right;
+    width: 43%;
+    padding: 40px;
+}
+
+
+#titulo{
+    display: flex;
+    width: 670px;
+    height: 115px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Jacques Francois Shadow', cursive;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 32%;
+    margin-top: 3%;
+}
+
+#confirmar{
+    width: 600px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    margin-left: 25%;
+    color: white;
+    text-align: center;
+    font-family: 'Jacques Francois Shadow', cursive;
+    font-size: 18pt;
+    border: none;
+    background: linear-gradient(90deg, #0D68AA 26.3%, rgba(38, 135, 206, 0.00) 89.69%);
+    transition: left 1s ease-in-out;
+}
+
+#confirmar:hover{
+    background: linear-gradient(90deg, rgba(38, 135, 206, 0.00) 24.34%, #0D68AA 89.69%);
+    cursor: pointer;
+
+}
+
+#divPass {
+    position: relative;
+}
+
+#mostrarPass {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 10px;
+    height: 62px;
+    border: none;
+    width: 150px;
+    margin-left: 80px;
+    text-align: center;
+    font-family: 'Itim', sans-serif;
+    border-radius: 50px;
+    background-color: white;
+    transform: translateY(-50%);
+    letter-spacing: 1px;
+    font-size: 12pt;
+}
+
+#mostrarPass:hover{
+    background-color: #0D68AA;
+    cursor: pointer;
+    color: white;
+}
