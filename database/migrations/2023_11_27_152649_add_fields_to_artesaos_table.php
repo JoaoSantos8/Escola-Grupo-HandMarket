@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('artesaos', function (Blueprint $table) {
+        Schema::create('artesaos', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome',100);
+            $table->string('Nome');
             $table->string('idade');
             $table->string('telefone');
             $table->date('dataRegisto');
             $table->timestamps();
-            $table->unsignedBigInteger('feiras_id')->references('id')->on('feiras');
+            // $table->unsignedBigInteger('feiras_id')->references('id')->on('feiras');
         });
     }
 
