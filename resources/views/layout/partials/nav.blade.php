@@ -11,7 +11,7 @@
     <a href="#" id="artigo">Artesãos</a>
     <a href="{{ asset('patrocinadores')}}" id="artigo">Patrocinadores</a>
     <a href="{{ asset('noticias')}}" id="artigo">Noticias</a>
-    <a href="{{ asset('singup')}}" id="artigo">SignUp</a>
+    <a href="{{ route('register') }}" id="artigo">SignUp</a>
     <a href="#" id="artigo">Loja</a>
 
     </div>

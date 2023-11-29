@@ -22,13 +22,6 @@
 @section('content')
 
 <style>
-    .navbar{
-        background: inherit !important }
-
-    footer{
-        background: inherit !important;
-        width: 100% !important;
-    }
 
     section{
         background: inherit !important;
@@ -37,11 +30,13 @@
 
 <section id="hero" class="d-flex align-items-center">
 
-    <form action="#" id="form" method="get">
+    
+    <form method="POST" action="{{ route('register') }}" id="form">
+    @csrf
 
     <div id="ladoEsq">
     <label for="inputNome" id="labelNome">Nome de Utilizador</label>
-    <input type="text" name="nome" id="inputNome">
+    <input type="text" name="name" id="inputNome">
     <label for="inputNome" id="labelPass">Password</label>
 
     <div id="divPass">

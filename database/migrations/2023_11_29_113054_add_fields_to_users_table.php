@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('imagem');
+            $table->string('imagem')->default('{{ asset(img/default_user.jpg)}}');
             $table->string('telefone');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

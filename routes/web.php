@@ -19,3 +19,8 @@ Route::get('/', [PageController::class,'index'])->name('index');
 Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('patrocinadores');
 
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

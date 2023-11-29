@@ -1,9 +1,9 @@
 
 body{
     margin: auto;
-    background: rgb(210,180,140);
-    background: linear-gradient(100deg, rgba(210,180,140,1) 23%, rgba(142,129,111,1) 68%);
-}
+    height: 100%;
+    width: 100%;
+    }
 
 #form {
     position: relative;
@@ -11,7 +11,8 @@ body{
     margin: auto;
     height: 385px;
     border-radius: 70px;
-    background: #FFF;
+    background: rgb(210,180,140);
+    background: linear-gradient(100deg, rgba(210,180,140,1) 23%, rgba(142,129,111,1) 68%);
     color: black !important;
     z-index: 0;
 }
