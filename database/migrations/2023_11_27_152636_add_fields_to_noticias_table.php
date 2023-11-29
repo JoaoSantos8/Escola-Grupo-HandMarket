@@ -19,6 +19,16 @@ return new class extends Migration
             $table->date('data');
             $table->timestamps();
             $table->unsignedBigInteger('feiras_id')->references('id')->on('feiras');
+=======
+        Schema::create('noticias', function (Blueprint $table) {
+            $table->id();
+            $table->string('imagem');
+            $table->string('Titulo');
+            $table->text('descricao');
+            $table->date('data');
+            $table->timestamps();
+            // $table->unsignedBigInteger('feiras_id')->references('id')->on('feiras');
+>>>>>>> fb97ecdc943edcba80ee6fe87e8c327aa05e6316
         });
     }
 
