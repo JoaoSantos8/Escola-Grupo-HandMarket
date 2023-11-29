@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('artesaos', function (Blueprint $table) {
+        Schema::create('noticias', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome',100);
-            $table->string('idade');
-            $table->string('telefone');
-            $table->date('dataRegisto');
             $table->timestamps();
-            $table->unsignedBigInteger('feiras_id')->references('id')->on('feiras');
+            $table->string('imagem',255);
+            $table->string('Titulo');
+            $table->text('descricao',255);
+            $table->date('data');
         });
     }
 
@@ -27,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('artesaos', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('noticias');
     }
 };

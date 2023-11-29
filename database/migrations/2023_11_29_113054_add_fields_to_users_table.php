@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feiras', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->text('localizacao');
-            $table->string('dataInicio');
-            $table->string('dataFim');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('imagem');
+            $table->string('telefone');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 
@@ -25,7 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('feiras', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }
