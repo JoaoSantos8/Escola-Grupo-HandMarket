@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ArtesaoController;
+use App\Http\Controllers\FeiraController;
+use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\ProdutoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +29,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::resource('admin/users', UserController::class, ['as' => 'admin']);
+
+Route::resource('admin/artesaos', ArtesaoController::class, ['as' => 'admin']);
+
+Route::resource('admin/feiras', FeiraController::class, ['as' => 'admin']);
+
+Route::resource('admin/noticias', NoticiaController::class, ['as' => 'admin']);
+
+Route::resource('admin/produtos', ProdutoController::class, ['as' => 'admin']);
