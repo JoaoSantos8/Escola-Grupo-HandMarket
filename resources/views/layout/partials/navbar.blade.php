@@ -6,8 +6,9 @@
             <a href="{{route('index')}}" class="nav-link">Home</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Feiras</a>
+            <a href="{{ route('feiras') }}" class="nav-link">Feiras</a>
         </li>
+        
         <li class="nav-item">
             <a href="#" class="nav-link">Artesãos</a>
         </li>
