@@ -16,7 +16,7 @@
             <a href="{{route('patrocinadores')}}" class="nav-link">Patrocinadores</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link">Noticias</a>
+            <a href="{{route('noticia')}}" class="nav-link">Noticias</a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">Loja</a>

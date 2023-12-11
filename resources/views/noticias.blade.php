@@ -1,9 +1,9 @@
 @extends('layout.master')
 
-@section('title','Patrocinadores')
+@section('title','Noticias')
 
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/patrocinadores.css')}}">
+<link rel="stylesheet" href="{{asset('css/noticias.css')}}">
 @endsection
 
 @section('content')
