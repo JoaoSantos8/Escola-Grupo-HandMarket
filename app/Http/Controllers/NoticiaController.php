@@ -12,7 +12,8 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Noticias::all();
+        return view('_admin.noticias.index', compact('noticias'));
     }
 
     /**

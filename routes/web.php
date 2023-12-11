@@ -2,15 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
-<<<<<<< HEAD
 use App\Http\Controllers\FeirasController;
-=======
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArtesaoController;
 use App\Http\Controllers\FeiraController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\ProdutoController;
->>>>>>> 4545e2a42b012d97b3d68e1e277a9b515d8094ec
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +24,18 @@ Route::get('/', [PageController::class,'index'])->name('index');
 
 Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('patrocinadores');
 
+Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
+
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-<<<<<<< HEAD
 Route::get('/feiras', [FeirasController::class, 'index'])->name('feiras');
 
 
 Route::post('/feira', [FeirasController::class, 'store'])->name('novaFeira');
-
-=======
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
 Route::resource('admin/artesaos', ArtesaoController::class, ['as' => 'admin']);
@@ -49,4 +45,3 @@ Route::resource('admin/feiras', FeiraController::class, ['as' => 'admin']);
 Route::resource('admin/noticias', NoticiaController::class, ['as' => 'admin']);
 
 Route::resource('admin/produtos', ProdutoController::class, ['as' => 'admin']);
->>>>>>> 4545e2a42b012d97b3d68e1e277a9b515d8094ec
