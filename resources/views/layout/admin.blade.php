@@ -59,8 +59,8 @@
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="#">Listagem</a>
-                        <a class="collapse-item" href="#">Novo Utilizador</a>
+                        <a class="collapse-item" href="{{route('admin.users.index')}}">Listagem</a>
+                        <a class="collapse-item" href="{{route('admin.users.create')}}">Novo Utilizador</a>
                     </div>
                 </div>
             </li>
@@ -73,13 +73,21 @@
             </a>
             <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categorias:</h6>
-                    <a class="collapse-item" href="#">Listagem</a>
-                    <a class="collapse-item" href="#">Nova Categoria</a>
+                    <h6 class="collapse-header">Artesaos:</h6>
+                    <a class="collapse-item" href="{{route('admin.artesaos.index')}}">Listagem</a>
+                    <a class="collapse-item" href="{{route('admin.artesaos.create')}}">Novo Artesao</a>
                     <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Projetos:</h6>
-                    <a class="collapse-item" href="#">Listagem</a>
-                    <a class="collapse-item" href="#">Novo Projeto</a>
+                    <h6 class="collapse-header">Feiras:</h6>
+                    <a class="collapse-item" href="{{route('admin.feiras.index')}}">Listagem</a>
+                    <a class="collapse-item" href="{{route('admin.feiras.create')}}">Nova Feira</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Produtos:</h6>
+                    <a class="collapse-item" href="{{route('admin.produtos.index')}}">Listagem</a>
+                    <a class="collapse-item" href="{{route('admin.produtos.create')}}">Novo Produto</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Noticias:</h6>
+                    <a class="collapse-item" href="{{route('admin.noticias.index')}}">Listagem</a>
+                    <a class="collapse-item" href="{{route('admin.noticias.create')}}">Nova Noticia</a>
                 </div>
             </div>
         </li>

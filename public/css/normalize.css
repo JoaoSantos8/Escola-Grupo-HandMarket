@@ -1,7 +1,7 @@
 * {
     margin: 0px;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 html {
@@ -28,6 +28,10 @@ a {
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 
     font-family: 'Itim', sans-serif;
 }
@@ -115,6 +119,13 @@ a {
     }
 }
 
+#footer{
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
 
 .footer-distributed {
     background-color: #d2b48c;
