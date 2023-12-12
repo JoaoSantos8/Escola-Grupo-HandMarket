@@ -12,7 +12,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
-        $categories=Noticias::all();
+        $noticias=Noticia::all();
         return view('_admin.noticias.index', compact('noticias'));
     }
 
@@ -21,7 +21,8 @@ class NoticiaController extends Controller
      */
     public function create()
     {
-        //
+        $noticia=new Noticia;
+        return view('_admin.noticias.create', compact("noticia"));
     }
 
     /**
@@ -29,7 +30,12 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fields=$request->validate();
+        $noticia=new Noticia();
+        $noticia->fill($fields);
+        $noticia->save();
+        return redirect()->route('admin.noticias.index')->with('success', 'Noticia criada com sucesso');
+           
     }
 
     /**

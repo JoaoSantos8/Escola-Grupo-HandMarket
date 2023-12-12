@@ -36,18 +36,7 @@
                 </form>
               </td>
             </tr>
-            <tr>
-              <td>2º Ano</td>
-              <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="#"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="#"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="#" role="form" class="inline">
-                  <button type="submit" class="btn btn-xs btn-danger btn-p"><i class="fas fa-trash fa-xs"></i></button>
-                </form>
-              </td>
-            </tr>
             @endforeach
-          </tbody>
         </table>
       </div>
       @else

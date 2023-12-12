@@ -146,7 +146,14 @@
 
         </nav>
         <!-- End of Topbar -->
-
+        <div class="container-fluid">
+            @if ($errors->any())
+                @include ('layout.partials.error')
+            @endif
+            @if (!empty(session('success')))
+                @include ('layout.partials.success')
+            @endif
+           </div>
         <!-- Begin Page Content -->
         @yield("content")
 
