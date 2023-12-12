@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Noticia;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\NoticiaRequest;
 class NoticiaController extends Controller
 {
     /**
@@ -28,9 +28,9 @@ class NoticiaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(NoticiaRequest $request)
     {
-        $fields=$request->validate();
+        $fields=$request->validated();
         $noticia=new Noticia();
         $noticia->fill($fields);
         $noticia->save();
