@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feira;
+use App\Models\feiras;
 use Illuminate\Http\Request;
 
 class FeiraController extends Controller
@@ -12,8 +12,8 @@ class FeiraController extends Controller
      */
     public function index()
     {
-        $novafeiras = feira::all();
-        return view('feiras', compact('novafeiras'));
+        $feiras = feiras::all();
+        return view('_admin.feiras.index', compact('feiras'));
     }
 
     /**
@@ -21,7 +21,8 @@ class FeiraController extends Controller
      */
     public function create()
     {
-        //
+        $feira=new Feiras;
+        return view('_admin.feiras.create', compact("feira"));
     }
 
     /**
@@ -31,19 +32,25 @@ class FeiraController extends Controller
     {
         $request->validate([
         'nome' => 'required|string|max:255',
+        'descricao' => 'required|string|max:255',
+        'imagem' => 'string|max:255',
         'localizacao' => 'required|string|max:255',
-        'data_inicio' => 'required|date',
-        'data_fim' => 'required|date|after:data_inicio',
+        'dataInicio' => 'required|date',
+        'dataFim' => 'required|date|after:dataInicio',
+        'preco' => 'required|integer',
     ]);
 
-    feira::create([
-        'nome' => $request->input('nome'),
-        'localizacao' => $request->input('localizacao'),
-        'data_inicio' => $request->input('data_inicio'),
-        'data_fim' => $request->input('data_fim'),
+    feiras::create([
+        'feiraNome' => $request->input('nome'),
+        'feiraDescricao' => $request->input('descricao'),
+        'feiraImagemURL' => $request->input('imagem'),
+        'feiraLocalizacao' => $request->input('localizacao'),
+        'feiraDataInicio' => $request->input('dataInicio'),
+        'feiraDataFim' => $request->input('dataFim'),
+        'feiraPreco' => $request->input('preco'),
     ]);
 
-    return redirect('/formularionovafeira')->with('success', 'Feira adicionada com sucesso!');
+    return redirect()->route('admin.feiras.index')->with('success', 'Feira criada com sucesso');
     }
 
     /**
@@ -51,16 +58,15 @@ class FeiraController extends Controller
      */
     public function show(Feira $feira)
     {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Feira $feira)
-    {
-        //
-    }
+    public function edit(Feiras $feira)
+{
+    return view('_admin.feiras.edit', compact('feira'));
+}
 
     /**
      * Update the specified resource in storage.

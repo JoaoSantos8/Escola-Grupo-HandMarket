@@ -26,6 +26,8 @@ Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('p
 
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
 
+Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -34,7 +36,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/feiras', [FeiraController::class, 'index'])->name('feiras');
 
 
-Route::post('/feira', [FeiraController::class, 'store'])->name('novaFeira');
+Route::post('/feira', [FeiraController::class, 'store'])->name('feira');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 

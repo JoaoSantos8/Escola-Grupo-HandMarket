@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('feiras', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->text('localizacao');
-            $table->date('dataInicio');
-            $table->date('dataFim');
+            $table->string('feiraNome');
+            $table->text('feiraDescricao');
+            $table->string('feiraImagemURL')->nullable();
+            $table->text('feiraLocalizacao');
+            $table->date('feiraDataInicio');
+            $table->date('feiraDataFim');
+            $table->integer('feiraPreco');
             $table->timestamps();
         });
     }
