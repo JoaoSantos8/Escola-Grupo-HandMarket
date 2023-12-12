@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Carbon\Carbon;
 
 class NoticiaRequest extends FormRequest
 {
@@ -26,10 +27,17 @@ class NoticiaRequest extends FormRequest
             "titulo" => 'required|min:3|max:80|unique:noticias,titulo,' .
                 $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
             "descricao" => 'required|min:3|max:255|unique:noticias,descricao,' .
-                $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "date" => 'required|min:3|max:255|unique:noticias,data,' .
-                $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
+                $currentId ,
+            "data" => 'required|date|unique:noticias,data,' . $currentId,
         ];
+    }
+
+    public function validationData()
+    {
+        // Adiciona a data atual ao conjunto de dados validados
+        return array_merge($this->all(), [
+            'data' => Carbon::now(),
+        ]);
     }
 
     public function messages()
