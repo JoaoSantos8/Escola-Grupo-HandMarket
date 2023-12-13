@@ -9,9 +9,7 @@
         </div>
         <div class="card-body">
 
-			<div><strong>Titulo:</strong> {{$noticia->titulo}} </div>
-			<div><strong>Descrição:</strong> {{$noticia->descricao}} </div>
-			<div><strong>Data:</strong> {{$noticia->data}} </div>
+			<div><strong>Nome:</strong> xxx </div>
 		</div>
 	</div>
 </div>
