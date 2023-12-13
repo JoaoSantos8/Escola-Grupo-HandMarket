@@ -1,11 +1,12 @@
 <div class="form-group">
     
     <label for="inputNome">Nome</label>
-    <input type="text" class="form-control" name="nome" id="inputNome" value="{{ old('feiraNome', $feira->nome) }}">
+    <input type="text"  class="form-control" name="nome" value="{{ old('feiraNome', $feira->feiraNome) }}">
+
 
     <br>
     <label for="inputUltimoD">Descrição</label>
-    <input type="text" class="form-control" name="descricao" id="inputUltimoD" value="{{ old('feiraDescricao', $feira->descricao) }}">
+    <input type="text" class="form-control" name="descricao" id="inputUltimoD" value="{{ old('feiraDescricao', $feira->feiraDescricao) }}">
 
     <br>
     <label for="inputImagem">Imagem</label>
@@ -25,5 +26,6 @@
 
     <br>
     <label for="inputUltimoD">Preço - Entrada €</label>
-    <input type="number" class="form-control" name="preco" id="inputUltimoD" value="{{ old('feiraPreco', $feira->feiraPreco) }}">
+    <input type="number" class="form-control" name="preco" id="inputUltimoD" value="{{ old('preco', $feira->feiraPreco) }}">
+
 </div>

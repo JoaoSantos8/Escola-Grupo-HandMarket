@@ -33,10 +33,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/feiras', [FeiraController::class, 'index'])->name('feiras');
+Route::get('/feiras', [App\Http\Controllers\FeiraController::class, 'index'])->name('feiras');
 
 
-Route::post('/feira', [FeiraController::class, 'store'])->name('feira');
+Route::get('/feira', [FeiraController::class, 'show'])->name('feira');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 

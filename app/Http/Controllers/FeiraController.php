@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\feiras;
+use App\Models\Feira;
 use Illuminate\Http\Request;
 
 class FeiraController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $feiras = feiras::all();
+        $feiras = Feira::all();
+        
         return view('_admin.feiras.index', compact('feiras'));
     }
 
@@ -21,8 +23,9 @@ class FeiraController extends Controller
      */
     public function create()
     {
-        $feira=new Feiras;
-        return view('_admin.feiras.create', compact("feira"));
+        
+        $feira = new Feira();
+        return view('_admin.feiras.create', compact('feira'));
     }
 
     /**
@@ -40,7 +43,8 @@ class FeiraController extends Controller
         'preco' => 'required|integer',
     ]);
 
-    feiras::create([
+
+    Feira::create([
         'feiraNome' => $request->input('nome'),
         'feiraDescricao' => $request->input('descricao'),
         'feiraImagemURL' => $request->input('imagem'),
@@ -58,12 +62,14 @@ class FeiraController extends Controller
      */
     public function show(Feira $feira)
     {
+
+        return view('_admin.feiras.index', compact('feira'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Feiras $feira)
+    public function edit(Feira $feira)
 {
     return view('_admin.feiras.edit', compact('feira'));
 }
