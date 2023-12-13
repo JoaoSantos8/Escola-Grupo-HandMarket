@@ -13,5 +13,6 @@ class Noticia extends Model
         'titulo',
         'descricao',
         'data',
+        'image'
     ];
 }

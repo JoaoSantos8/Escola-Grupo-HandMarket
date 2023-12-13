@@ -6,7 +6,6 @@ use App\Models\Noticia;
 use Illuminate\Http\Request;
 use App\Http\Requests\NoticiaRequest;
 
-
 class NoticiaController extends Controller
 {
     /**
@@ -32,6 +31,7 @@ class NoticiaController extends Controller
      */
     public function store(NoticiaRequest $request)
     {
+        
         $fields = $request->validated();
         $noticia = new Noticia();
         $noticia->fill($fields);
@@ -53,7 +53,7 @@ class NoticiaController extends Controller
      */
     public function edit(Noticia $noticia)
     {
-        //
+        return view('_admin.noticias.edit', compact('noticia'));
     }
 
     /**
@@ -61,7 +61,10 @@ class NoticiaController extends Controller
      */
     public function update(NoticiaRequest $request, Noticia $noticia)
     {
-        //
+        $fields = $request->validated();
+        $noticia->fill($fields);
+        $noticia->save();
+        return redirect()->route('admin.noticias.index')->with('success', 'Noticia atualizada com sucesso');
     }
 
     /**
@@ -69,6 +72,10 @@ class NoticiaController extends Controller
      */
     public function destroy(Noticia $noticia)
     {
-        //
+
+        $noticia->delete();
+        return redirect()->route('admin.noticias.index')->with('success',
+            'Noticia eliminada com sucesso');
+
     }
 }
