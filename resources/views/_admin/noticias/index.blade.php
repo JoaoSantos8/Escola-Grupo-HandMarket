@@ -18,14 +18,14 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Nome</th>
+              <th>Titulo</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             @foreach($noticias as $noticia)
             <tr>
-              <td>>{{$noticia->nome}}</td>
+              <td>>{{$noticia->titulo}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.noticias.show',$noticia)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.noticias.edit',$noticia)}}"><i class="fas fa-pen fa-xs"></i></a>
