@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Noticia;
 
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class PageController extends Controller
         return view('signup');
     }
     public function noticia(){
-        return view('noticias');
+        $noticias = Noticia::all();
+        return view('noticias', compact('noticias'));
     }
 }
