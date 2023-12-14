@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
 use App\Http\Requests\NoticiaRequest;
+use Illuminate\Support\Facades\Storage;
+
 
 class NoticiaController extends Controller
 {
@@ -31,10 +33,13 @@ class NoticiaController extends Controller
      */
     public function store(NoticiaRequest $request)
     {
-        
+
         $fields = $request->validated();
         $noticia = new Noticia();
         $noticia->fill($fields);
+        $img_path = $request->file('image')->store(
+            'public/noticias_image');
+        $noticia->image = basename($img_path);
         $noticia->save();
         return redirect()->route('admin.noticias.index')->with('success', 'Noticia criada com sucesso');
 
@@ -63,6 +68,14 @@ class NoticiaController extends Controller
     {
         $fields = $request->validated();
         $noticia->fill($fields);
+
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete('noticias_image/'.
+            $noticia->image);
+            $img_path =
+            $request->file('image')->store('public/noticias_image');
+            $noticia->image = basename($img_path);
+            }
         $noticia->save();
         return redirect()->route('admin.noticias.index')->with('success', 'Noticia atualizada com sucesso');
     }
@@ -73,6 +86,7 @@ class NoticiaController extends Controller
     public function destroy(Noticia $noticia)
     {
 
+        Storage::disk('public')->delete('noticias_image/' .$noticia->image);
         $noticia->delete();
         return redirect()->route('admin.noticias.index')->with('success',
             'Noticia eliminada com sucesso');

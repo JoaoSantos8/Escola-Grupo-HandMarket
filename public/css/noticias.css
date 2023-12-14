@@ -2,12 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 20px;
 }
 
 .noticia-box {
-    border: 2px solid #d2b48c; /* Cor da borda desejada */
+    border: 5px solid #d2b48c; /* Cor da borda desejada */
     border-radius: 15px;
-    padding: 15px;
+    padding: 10px;
     width: 100%;
-    font-size: 25px !important;
+    font-size: 20px !important;
+}
+
+.image{
+    max-width: 400px;
+    max-height: 400px;
 }

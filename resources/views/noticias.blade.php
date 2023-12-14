@@ -9,12 +9,12 @@
 @section('content')
 
 <div class="container">
-    <h1>Lista de Notícias</h1>
     <div class="noticias-container">
         @if (count($noticias) > 0)
             @foreach ($noticias as $noticia)
                 <div class="noticia-box">
                     <h2>{{ $noticia->titulo }}</h2>
+				<img class="image" alt="Noticia Image" src="{{ asset('storage/noticias_image/' .$noticia->image)}}">
                     <p>{{ $noticia->descricao }}</p>
                     <p>Data: {{ $noticia->data }}</p>
                     <!-- Adicione outras informações conforme necessário -->

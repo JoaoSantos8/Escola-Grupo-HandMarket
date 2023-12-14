@@ -23,19 +23,20 @@ class NoticiaRequest extends FormRequest
     public function rules(): array
     {
         $currentId = $this->noticia ? $this->noticia->id : null;
+        $img_rule = $this->noticia ? 'nullable' : 'required';
         return [
-            "titulo" => 'required|min:3|max:80|unique:noticias,titulo,' .
-                $currentId . '|regex:/^[A-ZÀ-úa-z\s]+$/',
-            "descricao" => 'required|min:3|max:255|unique:noticias,descricao,' .
+            "titulo" => 'required|min:3|max:255|unique:noticias,titulo,' .
+                $currentId ,
+            "descricao" => 'required|min:100|unique:noticias,descricao,' .
                 $currentId ,
             "data" => 'required|date|unique:noticias,data,' . $currentId,
-            "imagem" => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            "image" => $img_rule.'|image|mimes:jpeg,png,jpg,gif|max:2048',
+           
         ];
     }
 
     public function validationData()
     {
-        // Adiciona a data atual ao conjunto de dados validados
         return array_merge($this->all(), [
             'data' => Carbon::now(),
         ]);
