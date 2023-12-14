@@ -13,7 +13,7 @@
       </a>
     </div>
     <div class="card-body">
-      @if ($feiras && count($feiras) > 0)
+      @if (count($feiras))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>

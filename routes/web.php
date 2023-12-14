@@ -22,6 +22,8 @@ use App\Http\Controllers\ProdutoController;
 
 Route::get('/', [PageController::class,'index'])->name('index');
 
+Route::get('/feira', [PageController::class,'feira'])->name('feira');
+
 Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('patrocinadores');
 
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
@@ -30,13 +32,9 @@ Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
 
 Route::get('/feiras', [App\Http\Controllers\FeiraController::class, 'index'])->name('feiras');
-
-
-Route::get('/feira', [FeiraController::class, 'show'])->name('feira');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 

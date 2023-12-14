@@ -1,10 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+@import url(https://fonts.googleapis.com/css2?family=Itim&display=swap);
 body {
     background: #333;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 300;
     overflow: hidden;
     margin: 0; /* Adicionado para remover margens padrão do body */
+  }
+
+  a{
+    color: black;
   }
 
   .rotate-slider {
@@ -51,23 +56,44 @@ body {
   background: #3498db;
 }
 .rotate-slider ul.slides li:nth-of-type(2) {
-  background: url("http://static.pexels.com/wp-content/uploads/2014/05/car-oldtimer-snow-342-825x550.jpg");
+  background: url("../img/feiras.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .rotate-slider ul.slides li:nth-of-type(3) {
   background: #e74c3c;
 }
 .rotate-slider ul.slides li:nth-of-type(4) {
-  background: url("http://static.pexels.com/wp-content/uploads/2014/06/analog-camera-old-olympus-om-10-1528-825x550.jpg");
+  background: url("../img/artesaos.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .rotate-slider ul.slides li:nth-of-type(5) {
   background: #f1c40f;
 }
 .rotate-slider ul.slides li:nth-of-type(6) {
-  background: url(http://static.pexels.com/wp-content/uploads/2014/06/bridge-city-night-645-827x550.jpg);
+  background: url("../img/produtos.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .rotate-slider ul.slides li .inner {
   box-sizing: border-box;
   padding: 2em;
   height: 100%;
   width: 100%;
+}
+
+#button{
+  background-color: white; 
+  padding: 5px; border-radius: 
+  5px; font-family: 'Itim', sans-serif; 
+  border: none;
+  margin-top: 30px;
+  width: 100px;
+  height: 40px;
+}
+
+#button:hover{
+  background-color: #D2B48C;
+  cursor: pointer;
 }

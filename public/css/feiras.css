@@ -1,12 +1,30 @@
-#dadosFeira{
-    font-size: 15pt;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
+@import url(https://fonts.googleapis.com/css2?family=Itim&display=swap);
+
+
+
+#caixaFeira{
+    border: 4px solid var(--primary);
+    height: auto;
+    margin: 40px;
+    border-radius: 10px;
 }
 
-#titFeiras{
+#tituloFeira{
     text-align: center;
-    width: 100%;
+    font-size: 24pt;
+}
+
+#descricaoFeira, #localizacaoFeira, #precoFeira, #datasFeira{
+    text-align: center;
     font-size: 18pt;
+    font-family: 'itim' , sans-serif;
+}
+
+
+#datasFeira{
+    padding: 30px;
+}
+
+#precoFeira{
+    margin-top: 60px;
 }
