@@ -18,6 +18,7 @@
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
+            <th>Imagem</th>
               <th>Nome</th>
               <th></th>
             </tr>
@@ -25,6 +26,7 @@
           <tbody>
             @foreach ($feiras as $feira)
             <tr>
+                <td><img class="w-50" src="{{asset('storage/imagens_feiras/'.$feira->feiraImagemURL)}}" alt="Feira img"></td>
               <td>{{ $feira->feiraNome }}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{ route('admin.feiras.show', $feira) }}"><i class="fas fa-eye fa-xs"></i></a>
@@ -52,8 +54,9 @@
 <script>
   $('#dataTable').DataTable({
     destroy: true,
-    "order": [[0, 'asc']],
+    "order": [[1, 'asc']],
     "columns": [
+        { "orderable": false },
       null,
       { "orderable": false }
     ]

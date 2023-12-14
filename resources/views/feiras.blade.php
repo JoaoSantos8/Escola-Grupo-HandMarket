@@ -18,7 +18,9 @@
 
         <div id="descricaoFeira">{{ $feira->feiraDescricao }}</div>
 
-        <div></div>
+        <div id="imagemFeira" class="w-100">
+            <img class="w-100 mx-auto" style="border-top: 2px solid gray; border-bottom: 2px solid gray" src="{{ asset('storage/imagens_feiras/'.$feira->feiraImagemURL) }}" alt="Imagem do Produto">
+        </div>
 
         <div id="localizacaoFeira">Localização<br>{{ $feira->feiraDataInicio }}</div>
 

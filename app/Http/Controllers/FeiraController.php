@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feira;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FeiraController extends Controller
 {
@@ -14,7 +15,7 @@ class FeiraController extends Controller
     public function index()
     {
         $feiras = Feira::all();
-        
+
         return view('_admin.feiras.index', compact('feiras'));
     }
 
@@ -23,7 +24,7 @@ class FeiraController extends Controller
      */
     public function create()
     {
-        
+
         $feira = new Feira();
         return view('_admin.feiras.create', compact('feira'));
     }
@@ -36,18 +37,21 @@ class FeiraController extends Controller
         $request->validate([
         'nome' => 'required|string|max:255',
         'descricao' => 'required|string|max:255',
-        'imagem' => 'string|max:255',
+        'imagem' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'localizacao' => 'required|string|max:255',
         'dataInicio' => 'required|date',
         'dataFim' => 'required|date|after:dataInicio',
         'preco' => 'required|integer',
-    ]);
+        ]);
+        if ($request->hasFile('imagem')) {
+            $img_path=$request->file('imagem')->store('public/imagens_feiras');
+        }
 
 
     Feira::create([
         'feiraNome' => $request->input('nome'),
         'feiraDescricao' => $request->input('descricao'),
-        'feiraImagemURL' => $request->input('imagem'),
+        'feiraImagemURL' => basename($img_path),
         'feiraLocalizacao' => $request->input('localizacao'),
         'feiraDataInicio' => $request->input('dataInicio'),
         'feiraDataFim' => $request->input('dataFim'),
@@ -63,7 +67,7 @@ class FeiraController extends Controller
     public function show(Feira $feira)
     {
 
-        return view('_admin.feiras.index', compact('feira'));
+        return view('_admin.feiras.show', compact('feira'));
     }
 
     /**
@@ -79,7 +83,35 @@ class FeiraController extends Controller
      */
     public function update(Request $request, Feira $feira)
     {
-        //
+        $request->validate([
+            'nome' => 'required|string|max:255',
+            'descricao' => 'required|string|max:255',
+            'imagem' =>  'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'localizacao' => 'required|string|max:255',
+            'dataInicio' => 'required|date',
+            'dataFim' => 'required|date|after:dataInicio',
+            'preco' => 'required|integer',
+            ]);
+            if ($request->hasFile('imagem')) {
+                if (!empty($feira->feiraImagemURL)) {
+                    Storage::disk('public')->delete('imagens_feiras/' .$feira->feiraImagemURL);
+                    }
+                $img_path=$request->file('imagem')->store('public/imagens_feiras');
+                $feira->update(['feiraImagemURL' => basename($img_path)]);
+
+            }
+
+
+        $feira->update([
+            'feiraNome' => $request->input('nome'),
+            'feiraDescricao' => $request->input('descricao'),
+            'feiraLocalizacao' => $request->input('localizacao'),
+            'feiraDataInicio' => $request->input('dataInicio'),
+            'feiraDataFim' => $request->input('dataFim'),
+            'feiraPreco' => $request->input('preco'),
+        ]);
+
+        return redirect()->route('admin.feiras.index')->with('success', 'Feira criada com sucesso');
     }
 
     /**
@@ -87,6 +119,9 @@ class FeiraController extends Controller
      */
     public function destroy(Feira $feira)
     {
-        //
+        $feira->delete();
+        return redirect()->route('admin.feiras.index')->with('success',
+            'Noticia eliminada com sucesso');
+
     }
 }

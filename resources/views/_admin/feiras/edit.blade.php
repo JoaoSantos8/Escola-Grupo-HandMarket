@@ -9,10 +9,10 @@
 		</div>
 		<div class="card-body">
 
-			<form method="POST" action="{{ route('admin.feiras.store') }}" class="form-group">
+			<form method="POST" action="{{ route('admin.feiras.update',$feira) }}" class="form-group"  enctype="multipart/form-data">
 				@csrf
 				@include('_admin.feiras.partials.add-edit')
-
+                @method('PUT')
 				<div class="form-group">
 					<button type="submit" class="btn btn-success" name="ok">Guardar</button>
 					<a href="{{ route('admin.feiras.index') }}" class="btn btn-default">Cancelar</a>

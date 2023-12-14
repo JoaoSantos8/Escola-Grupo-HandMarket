@@ -1,5 +1,5 @@
 <div class="form-group">
-    
+
     <label for="inputNome">Nome</label>
     <input type="text"  class="form-control" name="nome" value="{{ old('feiraNome', $feira->feiraNome) }}">
 
@@ -10,7 +10,7 @@
 
     <br>
     <label for="inputImagem">Imagem</label>
-    <input type="file" class="form-control" name="imagem" id="inputImagem" value="{{old('feiraImagemURL',$feira->feiraImagemURL)}}">
+    <input type="file" class="form-control" name="imagem" id="inputImagem" value="{{old('feiraImagemURL',$feira->imagemCaminho)}}">
 
     <br>
     <label for="inputLocalizacao">Localização</label>
