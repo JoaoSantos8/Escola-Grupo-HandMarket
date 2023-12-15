@@ -75,15 +75,15 @@ body{
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    color: #FFF;
+    color: black;
     text-align: center;
     font-family: 'Jacques Francois Shadow', cursive;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 32%;
-    margin-top: 3%;
+    margin-top: 5% !important;
+    margin: auto;
 }
 
 #confirmar{
