@@ -31,5 +31,9 @@
 
 #imagemFeiras{
     padding: 10px;
-    
+
+}
+
+#caixaFeira:hover{
+    border: 5px solid var(--primary);
 }
