@@ -19,7 +19,7 @@
         <div id="descricaoFeira"class="p-5">{{ $feira->feiraDescricao }}</div>
 
         <div id="imagemFeira" class="w-100 p-5">
-            <img class="w-100 mx-auto" style="border-top: 2px solid gray; border-bottom: 2px solid gray" src="{{ asset('storage/imagens_feiras/'.$feira->feiraImagemURL) }}" alt="Imagem do Produto">
+            <img class="w-100 mx-auto" style="border-top: 2px solid gray; border-bottom: 2px solid gray" src="{{ asset('storage/feiras_image/'.$feira->feiraImagemURL) }}" alt="Imagem do Produto">
         </div>
 
         <div id="localizacaoFeira" class="p-5">Localização<br>{{ $feira->feiraDataInicio }}</div>
@@ -42,7 +42,7 @@
 </div>
 
 
-    <a class="btn btn-primary" href="{{ route('feiras') }}">
+    <a class="btn btn-primary m-5" id="botaoFeiras" href="{{ route('feiras') }}">
         <i class="fas fa-plus"></i> Adicionar Feiras
       </a>
 @endsection

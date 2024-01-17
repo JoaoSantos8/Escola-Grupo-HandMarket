@@ -131,9 +131,9 @@ class FeiraController extends Controller
             ]);
             if ($request->hasFile('imagem')) {
                 if (!empty($feira->feiraImagemURL)) {
-                    Storage::disk('public')->delete('imagens_feiras/' .$feira->feiraImagemURL);
+                    Storage::disk('public')->delete('feiras_image/' .$feira->feiraImagemURL);
                     }
-                $img_path=$request->file('imagem')->store('public/imagens_feiras');
+                $img_path=$request->file('imagem')->store('public/feiras_image');
                 $feira->update(['feiraImagemURL' => basename($img_path)]);
 
             }

@@ -35,10 +35,18 @@
 }
 
 #caixaFeira:hover{
-    border: 5px solid var(--primary);
+    background-color: #c59d67;
+    box-shadow: 10px 10px 10px #D2B48C;
 }
 
 #dadosD{
     border-radius: 10px;
     background-color: rgba(15, 105, 121, 0.774);
+}
+
+#botaoFeiras{
+    height:65px; 
+    width:200px; 
+    text-align:center; 
+    font-size:19pt;
 }
