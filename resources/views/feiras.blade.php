@@ -14,25 +14,25 @@
 <div class="w-100 d-flex flex-wrap align-items-center">
 @foreach ($feiras as $feira)
     <div class="w-25" id="caixaFeira">
-        <div id="tituloFeira"> {{ $feira->feiraNome }}</div>
+        <div id="tituloFeira" class="p-5"> {{ $feira->feiraNome }}</div>
 
-        <div id="descricaoFeira">{{ $feira->feiraDescricao }}</div>
+        <div id="descricaoFeira"class="p-5">{{ $feira->feiraDescricao }}</div>
 
-        <div id="imagemFeira" class="w-100">
+        <div id="imagemFeira" class="w-100 p-5">
             <img class="w-100 mx-auto" style="border-top: 2px solid gray; border-bottom: 2px solid gray" src="{{ asset('storage/imagens_feiras/'.$feira->feiraImagemURL) }}" alt="Imagem do Produto">
         </div>
 
-        <div id="localizacaoFeira">Localização<br>{{ $feira->feiraDataInicio }}</div>
+        <div id="localizacaoFeira" class="p-5">Localização<br>{{ $feira->feiraDataInicio }}</div>
 
 
         <div id="datasFeira">
 
-            <div class="float-left">Primeiro Dia<br>{{ $feira->feiraDataInicio }}</div>
-            <div class="float-right">Ultimo Dia<br>{{ $feira->feiraDataFim }}</div>
+            <div class="float-left p-5" id="dadosD">Primeiro Dia<br>{{ $feira->feiraDataInicio }}</div>
+            <div class="float-right p-5" id="dadosD">Ultimo Dia<br>{{ $feira->feiraDataFim }}</div>
 
         </div>
 
-        <div id="precoFeira">Preço - Entrada<br>@if ($feira->feiraPreco == 0)
+        <div id="precoFeira" class="p-5">Preço - Entrada<br>@if ($feira->feiraPreco == 0)
             Grátis
         @else
             {{ $feira->feiraPreco }}€

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feira;
 use Illuminate\Http\Request;
+use App\Http\Requests\feiraRequest;
 use Illuminate\Support\Facades\Storage;
 
 class FeiraController extends Controller
@@ -32,6 +33,23 @@ class FeiraController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    /*public function store(feiraRequest $request)
+    {
+
+        $fields = $request->validated();
+        $feira = new Feira();
+        $feira->fill($fields);
+
+        if ($request->hasFile('imagem')) {
+            $img_path = $request->file('imagem')->store('public/imagens_feiras');
+            $feira->feiraImagemURL  = basename($img_path);
+        }
+
+        $feira->save();
+
+    return redirect()->route('admin.feiras.index')->with('success', 'Feira criada com sucesso');
+    }*/
+
     public function store(Request $request)
     {
         $request->validate([
@@ -44,7 +62,7 @@ class FeiraController extends Controller
         'preco' => 'required|integer',
         ]);
         if ($request->hasFile('imagem')) {
-            $img_path=$request->file('imagem')->store('public/imagens_feiras');
+            $img_path=$request->file('imagem')->store('public/feiras_image');
         }
 
 
@@ -81,6 +99,25 @@ class FeiraController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    /*public function update(Request $request, Feira $feira)
+    {
+
+        $fields = $request->validated();
+        $feira->fill($fields);
+
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete('imagens_feiras/'.
+            $feira->image);
+            $img_path =
+            $request->file('image')->store('public/imagens_feiras');
+            $feira->image = basename($img_path);
+            }
+            $feira->save();
+        return redirect()->route('admin.feiras.index')->with('success', 'Feira atualizada com sucesso');
+    
+
+    }*/
+
     public function update(Request $request, Feira $feira)
     {
         $request->validate([
@@ -119,9 +156,10 @@ class FeiraController extends Controller
      */
     public function destroy(Feira $feira)
     {
+        Storage::disk('public')->delete('imagens_feiras/' .$feira->image);
         $feira->delete();
         return redirect()->route('admin.feiras.index')->with('success',
-            'Noticia eliminada com sucesso');
+            'Feira eliminada com sucesso');
 
     }
 }

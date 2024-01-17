@@ -10,7 +10,7 @@
        <div class="card-body">
 
            <div><strong>Titulo:</strong>  {{$feira->feiraNome}} </div>
-           <img class="w-50 b" src="{{asset('storage/imagens_feiras/'.$feira->feiraImagemURL)}}" alt="Feira img">
+           <img class="w-50 b" src="{{asset('storage/feiras_image/'.$feira->feiraImagemURL)}}" alt="Feira img">
            <div><strong>Descrição:</strong>  {{$feira->feiraDescricao}} </div>
            <div><strong>Data Inicio:</strong>  {{$feira->feiraDataInicio}} </div>
            <div><strong>Data Fim:</strong>  {{$feira->feiraDataFim}} </div>

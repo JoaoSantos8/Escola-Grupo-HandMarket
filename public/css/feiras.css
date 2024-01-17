@@ -3,7 +3,7 @@
 
 
 #caixaFeira{
-    border: 4px solid var(--primary);
+    background-color: #D2B48C;
     height: auto;
     margin: 40px;
     border-radius: 10px;
@@ -36,4 +36,9 @@
 
 #caixaFeira:hover{
     border: 5px solid var(--primary);
+}
+
+#dadosD{
+    border-radius: 10px;
+    background-color: rgba(15, 105, 121, 0.774);
 }

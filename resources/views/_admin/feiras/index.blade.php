@@ -31,7 +31,7 @@
           <tbody>
             @foreach ($feiras as $feira)
             <tr>
-                <td><img class="w-100" src="{{asset('storage/imagens_feiras/'.$feira->feiraImagemURL)}}" alt="Feira img"></td>
+                <td><img class="w-100" src="{{asset('storage/feiras_image/'.$feira->feiraImagemURL)}}" alt="Feira img"></td>
               <td class="align-middle text-center">{{ $feira->feiraNome }}</td>
               <td class="align-middle text-center p-5">{{ $feira->feiraDescricao }}</td>
               <td class="align-middle text-center p-5">{{ $feira->feiraDataInicio }}</td>
