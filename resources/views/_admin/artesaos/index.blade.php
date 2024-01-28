@@ -4,16 +4,16 @@
 @section('content')
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Noticias</h1>
+        <h1 class="h3 mb-2 text-gray-800">Artesãos</h1>
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <a class="btn btn-primary" href="{{ route('admin.noticias.create') }}">
-                    <i class="fas fa-plus"></i> Nova Noticia
+                <a class="btn btn-primary" href="{{ route('admin.artesaos.create') }}">
+                    <i class="fas fa-plus"></i> Novo Artesão
                 </a>
             </div>
             <div class="card-body">
-                @if (count($noticias))
+                @if (count($artesaos))
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
@@ -24,22 +24,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($noticias as $noticia)
+                                @foreach ($artesaos as $artesao)
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('storage/noticias_image/' . $noticia->image) }}"
+                                            <img src="{{ asset('storage/artesaos_image/' . $artesao->image) }}"
                                                 class="img-post" alt="Imagem">
                                         </td>
 
-                                        <td>>{{ $noticia->titulo }}</td>
+                                        <td>>{{ $artesao->Nome }}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p"
-                                                href="{{ route('admin.noticias.show', $noticia) }}"><i
+                                                href="{{ route('admin.artesaos.show', $artesao) }}"><i
                                                     class="fas fa-eye fa-xs"></i></a>
                                             <a class="btn btn-xs btn-warning btn-p"
-                                                href="{{ route('admin.noticias.edit', $noticia) }}"><i
+                                                href="{{ route('admin.artesaos.edit', $artesao) }}"><i
                                                     class="fas fa-pen fa-xs"></i></a>
-                                            <form method="POST" action="{{ route('admin.noticias.destroy', $noticia) }}"
+                                            <form method="POST" action="{{ route('admin.artesaos.destroy', $artesao) }}"
                                                 role="form" class="inline"
                                                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                 @csrf
@@ -53,7 +53,7 @@
                         </table>
                     </div>
                 @else
-                    <h6>Não existem noticias registadas</h6>
+                    <h6>Não existem artesaos registados</h6>
                 @endif
             </div>
         </div>

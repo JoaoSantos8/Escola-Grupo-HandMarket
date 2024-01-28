@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('idade');
             $table->string('telefone');
             $table->date('dataRegisto');
+            $table->string('image')->nullable();
         });
     }
 
