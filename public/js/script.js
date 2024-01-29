@@ -92,3 +92,65 @@ function validarSenha(senha) {
     }
 }
 
+
+$("#confirmarL").click(function(event) {
+    var email = $("#inputEmail").val();
+    var senha = $("#inputPass").val();
+
+    var emailValido = validarEmail(email);
+    var senhaValida = validarSenha(senha);
+
+    if (emailValido && senhaValida) {
+        $("#form").submit();
+    } else {
+        event.preventDefault();
+    }
+});
+
+
+function validarEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Formato de e-mail inválido.");
+        $("#inputEmail").css("border", "5px solid red");
+        return false;
+    } else {
+        $("#inputEmail").css("border", "5px solid green");
+        return true;
+    }
+}
+
+
+function validarSenha(senha) {
+    var comprimentoMinimo = 8;
+    var possuiCaracterEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senha);
+    var possuiNumero = /\d/.test(senha);
+    var possuiMaiuscula = /[A-Z]/.test(senha);
+    var possuiMinuscula = /[a-z]/.test(senha);
+
+    if (senha.length < comprimentoMinimo) {
+        alert("A senha deve ter pelo menos " + comprimentoMinimo + " caracteres.");
+        $("#inputPass").css("border", "5px solid red");
+        return false;
+    } else if (!possuiCaracterEspecial) {
+        alert("A senha deve conter pelo menos um caracter especial.");
+        $("#inputPass").css("border", "5px solid red");
+        return false;
+    } else if (!possuiNumero) {
+        alert("A senha deve conter pelo menos um número.");
+        $("#inputPass").css("border", "5px solid red");
+        return false;
+    } else if (!possuiMaiuscula) {
+        alert("A senha deve conter pelo menos uma letra maiúscula.");
+        $("#inputPass").css("border", "5px solid red");
+        return false;
+    } else if (!possuiMinuscula) {
+        alert("A senha deve conter pelo menos uma letra minúscula.");
+        $("#inputPass").css("border", "5px solid red");
+        return false;
+    } else {
+        $("#inputPass").css("border", "5px solid green");
+        return true;
+    }
+}
+
