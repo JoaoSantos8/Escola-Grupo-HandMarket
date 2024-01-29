@@ -45,3 +45,10 @@ Route::resource('admin/feiras', FeiraController::class, ['as' => 'admin']);
 Route::resource('admin/noticias', NoticiaController::class, ['as' => 'admin']);
 
 Route::resource('admin/produtos', ProdutoController::class, ['as' => 'admin']);
+
+Route::get('admin/dashboard', [PageController::class, 'admindashboard'], )->name('dashboard');
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
+    Route::get('/', [PageController::class, 'admindashboard'])
+        ->name('dashboard')/*->middleware('admin')*/;
+});

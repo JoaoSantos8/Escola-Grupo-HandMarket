@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProdutoRequest;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Artesao;
 
 class ProdutoController extends Controller
 {
@@ -12,7 +15,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        $produtos = Produto::all();
+        return view('_admin.produtos.index', compact('produtos'));
     }
 
     /**
@@ -20,15 +24,26 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        $produto = new Produto;
+        $artesaos= Artesao::all();
+        return view('_admin.produtos.create', compact("produto","artesaos"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProdutoRequest $request)
     {
-        //
+        $fields = $request->validated();
+        $produto = new Produto();
+        $produto->fill($fields);
+        
+        $img_path = $request->file('image')->store(
+            'public/produtos_image');
+        $produto->image = basename($img_path);
+        $produto->save();
+        return redirect()->route('admin.produtos.index')
+            ->with('success', 'Produto criada com sucesso');
     }
 
     /**
@@ -36,7 +51,7 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+        return view('_admin.produtos.show',compact("produto"));
     }
 
     /**
@@ -44,15 +59,19 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('_admin.produtos.edit',compact('produto'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Produto $produto)
+    public function update(ProdutoRequest $request, Produto $produto)
     {
-        //
+        $fields=$request->validated();
+        $produto->fill($fields);
+        $produto->save();
+        return redirect()->route('admin.produtos.index')->with('success',
+        'Produto atualizado com sucesso');
     }
 
     /**
@@ -60,6 +79,9 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+        Storage::disk('public')->delete('produtos_image/' .$produto->image);
+        $produto->delete();
+        return redirect()->route('admin.produtos.index')->with('success',
+            'produto eliminado com sucesso');
     }
 }

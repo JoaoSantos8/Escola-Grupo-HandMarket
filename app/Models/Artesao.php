@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Produto;
+
 
 class Artesao extends Model
 {
@@ -16,4 +18,10 @@ class Artesao extends Model
         'dataRegisto',
         'image'
     ];
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class, "artesao_id", "id");
+    }
+
 }

@@ -31,7 +31,7 @@
                                                 class="img-post" alt="Imagem">
                                         </td>
 
-                                        <td>>{{ $noticia->titulo }}</td>
+                                        <td>{{ $noticia->titulo }}</td>
                                         <td nowrap>
                                             <a class="btn btn-xs btn-primary btn-p"
                                                 href="{{ route('admin.noticias.show', $noticia) }}"><i

@@ -16,8 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->text('descricao');
-            $table->string('imagem');
-            $table->foreignId('artesao_id')->references('id')->on('artesaos');
+            $table->string('image')->nullable();
+
+
+            $table->unsignedBigInteger('artesao_id');
+            $table->foreign('artesao_id')->references('id')->on('artesaos');
         });
     }
 

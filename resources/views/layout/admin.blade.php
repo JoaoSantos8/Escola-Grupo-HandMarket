@@ -13,8 +13,8 @@
     <!-- Custom fonts for this template -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel=" stylesheet" type="text/css">
     <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
@@ -40,185 +40,225 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin">
+                <a class="nav-link" href="{{route('admin.dashboard')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a>
-                </li>
+            </li>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
 
 
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="true"
-                    aria-controls="collapseUsers">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers"
+                    aria-expanded="true" aria-controls="collapseUsers">
                     <i class="fas fa-users"></i>
                     <span>Utilizadores</span>
                 </a>
                 <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="{{route('admin.users.index')}}">Listagem</a>
-                        <a class="collapse-item" href="{{route('admin.users.create')}}">Novo Utilizador</a>
+                        <a class="collapse-item" href="{{ route('admin.users.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.users.create') }}">Novo Utilizador</a>
                     </div>
                 </div>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts" aria-expanded="true"
-                aria-controls="collapsePosts">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Projetos</span>
-            </a>
-            <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Artesaos:</h6>
-                    <a class="collapse-item" href="{{route('admin.artesaos.index')}}">Listagem</a>
-                    <a class="collapse-item" href="{{route('admin.artesaos.create')}}">Novo Artesao</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Feiras:</h6>
-                    <a class="collapse-item" href="{{route('admin.feiras.index')}}">Listagem</a>
-                    <a class="collapse-item" href="{{route('admin.feiras.create')}}">Nova Feira</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Produtos:</h6>
-                    <a class="collapse-item" href="{{route('admin.produtos.index')}}">Listagem</a>
-                    <a class="collapse-item" href="{{route('admin.produtos.create')}}">Novo Produto</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Noticias:</h6>
-                    <a class="collapse-item" href="{{route('admin.noticias.index')}}">Listagem</a>
-                    <a class="collapse-item" href="{{route('admin.noticias.create')}}">Nova Noticia</a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseArtesao"
+                    aria-expanded="true" aria-controls="collapseArtesao">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Artesãos</span>
+                </a>
+                <div id="collapseArtesao" class="collapse" aria-labelledby="headingArtesao" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Artesaos:</h6>
+                        <a class="collapse-item" href="{{ route('admin.artesaos.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.artesaos.create') }}">Novo Artesao</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFeiras"
+                    aria-expanded="true" aria-controls="collapseFeiras">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Feiras</span>
+                </a>
+                <div id="collapseFeiras" class="collapse" aria-labelledby="headingFeiras" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Feiras:</h6>
+                        <a class="collapse-item" href="{{ route('admin.feiras.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.feiras.create') }}">Nova Feira</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProdutos"
+                    aria-expanded="true" aria-controls="collapseProdutos">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Produtos</span>
+                </a>
+                <div id="collapseProdutos" class="collapse" aria-labelledby="headingProdutos"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Produtos:</h6>
+                        <a class="collapse-item" href="{{ route('admin.produtos.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.produtos.create') }}">Novo Produto</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNoticias"
+                    aria-expanded="true" aria-controls="collapseNoticias">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Noticias</span>
+                </a>
+                <div id="collapseNoticias" class="collapse" aria-labelledby="headingNoticias"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Noticias:</h6>
+                        <a class="collapse-item" href="{{ route('admin.noticias.index') }}">Listagem</a>
+                        <a class="collapse-item" href="{{ route('admin.noticias.create') }}">Nova Noticia</a>
+                    </div>
+                </div>
+            </li>
+
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-nav dark topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-200 small">Username</span>
+                                <img class="img-profile rounded-circle" alt="Photo User"
+                                    src="{{ asset('img/default_user.jpg') }}">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+                <div class="container-fluid">
+                    @if ($errors->any())
+                        @include ('layout.partials.error')
+                    @endif
+                    @if (!empty(session('success')))
+                        @include ('layout.partials.success')
+                    @endif
+                </div>
+                <!-- Begin Page Content -->
+                @yield('content')
+
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; CTeSP Desenvolvimento Web e Multimédia</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Terminar Sessão?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Clique no botão "Logout" se confirma que pretende terminar a sua sessão nesta
+                    página.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <form action="#" method="post" class="inline">
+                        <button class="btn btn-primary" type="submit">Logout</button>
+                    </form>
                 </div>
             </div>
-        </li>
-
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-    </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-nav dark topbar mb-4 static-top shadow">
-
-                <!-- Sidebar Toggle (Topbar) -->
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-
-
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-200 small">Username</span>
-                        <img class="img-profile rounded-circle" alt="Photo User" src="{{ asset('img/default_user.jpg') }}">
-                    </a>
-                    <!-- Dropdown - User Information -->
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">
-                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Perfil
-                        </a>
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                            Logout
-                        </a>
-                    </div>
-                </li>
-
-            </ul>
-
-        </nav>
-        <!-- End of Topbar -->
-        <div class="container-fluid">
-            @if ($errors->any())
-                @include ('layout.partials.error')
-            @endif
-            @if (!empty(session('success')))
-                @include ('layout.partials.success')
-            @endif
-           </div>
-        <!-- Begin Page Content -->
-        @yield("content")
-
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; CTeSP Desenvolvimento Web e Multimédia</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-</div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Terminar Sessão?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-        </div>
-        <div class="modal-body">Clique no botão "Logout" se confirma que pretende terminar a sua sessão nesta página.</div>
-        <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <form action="#" method="post" class="inline">
-                <button class="btn btn-primary" type="submit">Logout</button>
-            </form>
         </div>
     </div>
-</div>
-</div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="{{ asset('vendor/jquery/sb-admin-2.min.js') }}"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="{{ asset('vendor/jquery/sb-admin-2.min.js') }}"></script>
 
-<!-- Page level plugins -->
-<script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <!-- Page level plugins -->
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
-@yield("scripts")
+    @yield('scripts')
 
 </body>
+
 </html>
