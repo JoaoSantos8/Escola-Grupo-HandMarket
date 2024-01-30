@@ -9,55 +9,42 @@
 @endsection
 
 @section('content')
-<style>
 
+<a href="{{ route('artesaos')}}">
+  <div id="artesaos" title="Clique para ver os artesãos">
 
-    box-sizing: none !important;
+    <div id="titulo" >Artesãos</div>
+    <img src="{{ asset('img/artesaos.jpg')}}" alt="Artesãos" width="400px" id="img">
+    <div id="content">Lista de artesãos qualificados, onde também pode verificar quais as suas qualidades e como contactar cada artesão</div>
 
-</style>
-<div class="rotate-slider">
-    <ul class="slides">
-      <li>
-        <div class="inner">
-          <h1>Feiras</h1>
-          <p style="font-size: 13pt">Onde pode ver quais feiras estam disponiveis no momento, localização, dia que começa, dia que acaba e se é preciso pagar para entrar</p>
-          <button id="button"><a href="{{ route('feiras')}}">Ver Feiras</a></button>
-          </div>
-      </li>
-      <li>
-        <div class="inner"></div>
-      </li>
-      <li>
-        <div class="inner">
-          <h1>Artesãos</h1>
-          <p style="font-size: 13pt">Temos a página Artesãos para poder ver quais artesãos fazem parte da nossa instituição, os produtos feitos por eles e contactos</p>
-          </div>
-      </li>
-      <li>
-        <div class="inner">
-        </div>
-      </li>
-      <li>
-        <div class="inner">
-          <h1>Produtos</h1>
-          <p style="font-size: 13pt">Produtos que vendemos relacionados com a associação, uma loja virtual onde pode comprar vários tipos de produtos.</p>
-        </div>
-      </li>
-      <li>
-        <div class="inner">
-        </div>
-      </li>
-    </ul>
   </div>
-  <svg>
-    <defs>
-      <clipPath id="slideClip">
-        <path />
-      </clipPath>
-    </defs>
-  </svg>
+</a>
 
+<a href="{{ route('feira')}}">
+  <div id="feiras" title="Clique para ver as feiras">
+    <div id="titulo">Feiras</div>
+    <img src="{{ asset('img/feiras.jpg')}}" alt="Artesãos" width="400px" id="img">
+    <div id="content">Lista de Feiras em que pode ver onde se irá realizar a feira, data da feira, ver os tipos de Produtos e os eventos na feira<br></div>
+  </div>
+</a>
+
+
+<a href="{{ route('produtos')}}">
+  <div id="produtos" title="Clique para ver os produtos">
+    <div id="titulo">Produtos</div>
+    <img src="{{ asset('img/produtos.jpeg')}}" alt="Artesãos" width="400px" id="img">
+    <div id="content">Lista de Produtos feitos pelos artesãos da plataforma, preço de cada um, onde poderá também aceder á loja online da associação, e consequentemente poderá comprar alguma coisa</div>
+  </div>
+</a>
+
+  <div id="video">
+
+      <iframe width="1000px" height="500px" src="https://www.youtube.com/embed/OtYo4_O2LQU?autoplay=1" frameborder="0" allowfullscreen></iframe>
+  
+  
+  </div>
 @endsection
+
 
 @section('scripts')
 
