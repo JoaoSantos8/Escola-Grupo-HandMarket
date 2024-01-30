@@ -10,6 +10,7 @@
 
 @section('content')
 
+<h1 style="text-align: center; font-family:'itim'; padding:50px;">AS NOSSAS FEIRAS AGENDADAS OU ABERTAS</h1>
 
 <div class="w-100 d-flex flex-wrap align-items-center">
 @foreach ($feiras as $feira)
@@ -22,7 +23,7 @@
             <img class="w-100 mx-auto" style="border-top: 2px solid gray; border-bottom: 2px solid gray" src="{{ asset('storage/feiras_image/'.$feira->feiraImagemURL) }}" alt="Imagem do Produto">
         </div>
 
-        <div id="localizacaoFeira" class="p-5">Localização<br>{{ $feira->feiraDataInicio }}</div>
+        <div id="localizacaoFeira" class="p-5">Localização<br>{{ $feira->feiraLocalizacao }}</div>
 
 
         <div id="datasFeira">
