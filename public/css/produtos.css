@@ -2,31 +2,31 @@
 
 
 
-#caixaArtesao{
+#caixaProduto{
     background-color: #D2B48C;
     height: auto;
     margin: 40px;
     border-radius: 10px;
 }
 
-#nomeArtesao{
+#nomeProduto{
     text-align: center;
     font-size: 24pt;
 }
 
-#idadeArtesao, #telefoneArtesao, #registoArtesao{
+#descricaoProduto{
     text-align: center;
     font-size: 18pt;
     font-family: 'itim' , sans-serif;
 }
 
-#imagemArtesao{
+#imagemProduto{
     max-width: 250px;
     margin: auto
     
 }
 
-#caixaArtesao:hover{
+#caixaProduto:hover{
     background-color: #c59d67;
     box-shadow: 10px 10px 10px #D2B48C;
 }
