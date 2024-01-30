@@ -26,6 +26,10 @@ Route::get('/feira', [PageController::class,'feira'])->name('feira');
 
 Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('patrocinadores');
 
+Route::get('/artesaos', [PageController::class,'artesaos'])->name('artesao');
+
+Route::get('/produtos/{artesao_id}', [PageController::class, 'produtos'])->name('produtos');
+
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
 
 Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
