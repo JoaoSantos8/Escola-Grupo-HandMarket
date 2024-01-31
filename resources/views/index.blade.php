@@ -11,7 +11,7 @@
 @section('content')
 
 <section id="parte1">
-<a href="{{ route('artesaos')}}">
+<a href="{{ route('artesao')}}">
   <div id="artesaos" title="Clique para ver os artesãos">
 
     <div id="titulo" >Artesãos</div>
