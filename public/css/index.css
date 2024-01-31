@@ -1,99 +1,142 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
-@import url(https://fonts.googleapis.com/css2?family=Itim&display=swap);
-body {
-    background: #333;
-    font-family: "Roboto Slab", sans-serif;
-    font-weight: 300;
-    overflow: hidden;
-    margin: 0; /* Adicionado para remover margens padrão do body */
+
+body{
+  background: rgb(210,180,140);
+  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%);
+  background-repeat: no-repeat;
+  margin: 50px;
+  height: auto;
   }
 
-  a{
-    color: black;
+  .navbar{
+    width: auto !important;
+    margin-top: -55px !important;
   }
+  
+a{
+  color: black;
+}
 
-  .rotate-slider {
-    position: fixed;
-    bottom: 410px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 360px;
-    width: 380px;
-    z-index: -1;
-  }
-.rotate-slider ul.slides {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  top: 0;
-  left: 50%;
-  -ms-transform-origin: center center;
-  transform-origin: center center;
-  width: 100%;
+#artesaos, #produtos, #feiras{
+  box-shadow: 5px 5px 15px 15px gray;
+  
+  background: rgb(210,180,140);
+  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%);
+  height: 500px;
+  width: 500px;
+  margin-top: 100px;
+  margin-right: 50px;
+  margin-left: 50px;
+  border-radius: 20px;
+  opacity: 80%;
 }
-.rotate-slider ul.slides.animate {
-  -webkit-transition: all 0.75s ease-in-out;
-  transition: all 0.75s ease-in-out;
+
+#artesaos, #produtos{
+  float: left;
 }
-.rotate-slider ul.slides li {
-  background-position: center;
-  background-size: cover;
-  display: block;
-  color: #fff;
-  list-style: none;
-  position: absolute;
-  top: 0;
-  left: 50%;
+
+#feiras{
+  float: right;
+}
+
+#titulo{
+  font-size: 20pt;
+  font-family: 'itim', 'sans serif';
   text-align: center;
-  -ms-transform-origin: bottom center;
-  transform-origin: bottom center;
-  width: 100%;
-}
-.rotate-slider ul.slides li:nth-of-type(1) {
-  background: #3498db;
-}
-.rotate-slider ul.slides li:nth-of-type(2) {
-  background: url("../img/feiras.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.rotate-slider ul.slides li:nth-of-type(3) {
-  background: #e74c3c;
-}
-.rotate-slider ul.slides li:nth-of-type(4) {
-  background: url("../img/artesaos.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.rotate-slider ul.slides li:nth-of-type(5) {
-  background: #f1c40f;
-}
-.rotate-slider ul.slides li:nth-of-type(6) {
-  background: url("../img/produtos.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.rotate-slider ul.slides li .inner {
-  box-sizing: border-box;
-  padding: 2em;
-  height: 100%;
-  width: 100%;
+  padding: 20px;
 }
 
-#button{
-  background-color: white; 
-  padding: 5px; border-radius: 
-  5px; font-family: 'Itim', sans-serif; 
-  border: none;
-  margin-top: 30px;
-  width: 100px;
-  height: 40px;
+#img{
+  margin: 10px auto;
+  display: flex;
+  border-radius: 15px;
 }
 
-#button:hover{
-  background-color: #D2B48C;
+#content{
+  font-size: 15pt;
+  text-align: justify;
+  font-family: 'itim';
+  padding: 20px;
+}
+
+#artesaos:hover, #produtos:hover, #feiras:hover{
+
+  margin-top: 120px;
+  opacity: 120%;
   cursor: pointer;
+
+}
+
+#artesaos:active, #produtos:active, #feiras:active{
+
+  margin-top: 130px;
+  opacity: 120%;
+  cursor: pointer;
+  box-shadow: none;
+
+  box-shadow: -10px 15px 15px gray;
+}
+
+#video{
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  background: rgb(92,87,7);
+  background: radial-gradient(circle, rgba(92,87,7,1) 25%, rgba(210,180,140,0) 88%);
+}
+
+#parte1{
+  background-color: transparent !important;
+  height:  725px;
+}
+
+#parte2{
+  background-color: transparent !important;
+  height:  700px;
+  text-decoration: none !important;
+}
+
+#parte3{
+  background-color: transparent !important;
+  height:  500px;
+  text-decoration: none !important;
+}
+
+#videoTit{
+  text-align: center; 
+  margin-top: 20px;
+  font-family:'itim';
+  font-size: 30pt;
+}
+
+#contentSub{
+  font-family: 'itim';
+  margin: 10px auto;
+}
+
+#inputEmail{
+  width: 400px;
+  height: 50px;
+  font-size: 18pt;
+  border-radius: 10px;
+  border: none;
+  margin-top: 50px;
+  font-family: 'itim';
+}
+
+#confirmarEmail{
+  width: 200px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-size: 18pt;
+  border: none;
+  border-radius: 10px;
+  font-family: 'itim';
+}
+
+#confirmarEmail:hover{
+  cursor: pointer;
+  background-color: white;
+  border: 3px solid blue;
+  color: blue;
 }

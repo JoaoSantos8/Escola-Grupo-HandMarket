@@ -1,33 +1,19 @@
-@import url(https://fonts.googleapis.com/css2?family=Itim&display=swap);
-
-
-
-#caixaArtesao{
-    background-color: #D2B48C;
-    height: auto;
-    margin: 40px;
-    border-radius: 10px;
+.noticias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-#nomeArtesao{
-    text-align: center;
-    font-size: 24pt;
+.noticia-box {
+    border: 5px solid #d2b48c; /* Cor da borda desejada */
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px !important;
 }
 
-#idadeArtesao, #telefoneArtesao, #registoArtesao{
-    text-align: center;
-    font-size: 18pt;
-    font-family: 'itim' , sans-serif;
+.image{
+    max-width: 400px;
+    max-height: 400px;
 }
-
-#imagemArtesao{
-    max-width: 250px;
-    margin: auto
-    
-}
-
-#caixaArtesao:hover{
-    background-color: #c59d67;
-    box-shadow: 10px 10px 10px #D2B48C;
-}
-
