@@ -37,6 +37,7 @@
 #caixaFeira:hover{
     background-color: #c59d67;
     box-shadow: 10px 10px 10px #D2B48C;
+    cursor: pointer;
 }
 
 #dadosD{

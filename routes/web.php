@@ -32,15 +32,14 @@ Route::get('/logar', [PageController::class,'logar'])->name('logar');
 
 Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
 
+Route::get('/artesaos', [PageController::class,'artesaos'])->name('artesaos');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
 
 Route::get('/feiras', [App\Http\Controllers\FeiraController::class, 'index'])->name('feiras');
 
-Route::get('/artesaos', [App\Http\Controllers\ArtesaoController::class, 'index'])->name('artesaos');
-
-Route::get('/noticias', [App\Http\Controllers\ProdutoController::class, 'index'])->name('noticias');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 

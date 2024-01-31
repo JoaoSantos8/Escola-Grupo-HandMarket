@@ -8,7 +8,7 @@
     <div id="menuEsq">
 
     <a href="{{ asset('feiras')}}" id="artigo">Feiras</a>
-    <a href="{{ asset('artesao')}}" id="artesaos">Artesãos</a>
+    <a href="#" id="artigo">Artesãos</a>
     <a href="{{ asset('patrocinadores')}}" id="artigo">Patrocinadores</a>
     <a href="{{ asset('noticia')}}">Noticias</a>
     <a href="{{ route('register') }}" id="artigo">SignUp</a>

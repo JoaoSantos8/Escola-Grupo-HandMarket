@@ -8,7 +8,7 @@
             <a href="{{ route('feira') }}" class="nav-link">Feiras</a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('artesao')}}" class="nav-link">Artesãos</a>
+            <a href="{{ route('artesaos') }}" class="nav-link">Artesãos</a>
         </li>
         <li class="nav-item">
             <a href="{{ route('patrocinadores') }}" class="nav-link">Patrocinadores</a>
@@ -29,7 +29,7 @@
                 <a href="{{ route('signup') }}" class="nav-link">Signup</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('login') }}" class="nav-link">Login</a>
+                <a href="{{ route('logar') }}" class="nav-link">Login</a>
             </li>
         @endguest
     </ul>

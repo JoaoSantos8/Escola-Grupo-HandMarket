@@ -84,8 +84,9 @@ class FeiraController extends Controller
      */
     public function show(Feira $feira)
     {
-
-        return view('_admin.feiras.show', compact('feira'));
+        $localizacoes = Feira::groupBy('feiraLocalizacao')->pluck('feiraLocalizacao');
+        $feiras = Feira::all();
+        return view('feiras', compact('feiras', 'localizacoes'));
     }
 
     /**
@@ -162,4 +163,6 @@ class FeiraController extends Controller
             'Feira eliminada com sucesso');
 
     }
+    
 }
+

@@ -30,9 +30,9 @@
 </a>
 
 
-<a href="{{ route('noticias')}}">
+<a href="{{ route('noticia')}}">
   <div id="produtos" title="Clique para ver as noticias">
-    <div id="titulo">Produtos</div>
+    <div id="titulo">Noticias</div>
     <img src="{{ asset('img/produtos.jpeg')}}" alt="Noticias" width="400px" id="img">
     <div id="content">Aqui pode ver as noticas, mais recentes, mais vistas, noticias de descontos futuros</div>
   </div>
