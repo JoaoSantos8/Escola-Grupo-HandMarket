@@ -39,6 +39,23 @@ class PageController extends Controller
         return view('artesaos', compact('artesaos'));
     }
 
+    public function produtos($artesao_id)
+    {
+        // Recupere o artesão com base no ID
+        $artesao = Artesao::find($artesao_id);
+
+        if (!$artesao) {
+            // Adicione lógica para lidar com o caso em que o artesão não é encontrado
+            abort(404, 'Artesão não encontrado');
+        }
+
+        // Recupere os produtos associados ao artesão
+        $produtos = Produto::where('artesao_id', $artesao->id)->get();
+
+        // Retorne a view de produtos com os dados necessários
+        return view('produtos', compact('artesao', 'produtos'));
+    }
+
     public function admindashboard()
     {
         $count_produtos = Produto::count();

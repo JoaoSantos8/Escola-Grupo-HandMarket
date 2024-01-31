@@ -32,7 +32,9 @@ Route::get('/logar', [PageController::class,'logar'])->name('logar');
 
 Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
 
-Route::get('/artesaos', [PageController::class,'artesaos'])->name('artesaos');
+Route::get('/artesaos', [PageController::class,'artesaos'])->name('artesao');
+
+Route::get('/produtos/{artesao_id}', [PageController::class, 'produtos'])->name('produtos');
 
 Auth::routes();
 
