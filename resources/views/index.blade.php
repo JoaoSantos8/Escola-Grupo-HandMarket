@@ -10,7 +10,7 @@
 
 @section('content')
 
-<div id="parte1">
+<section id="parte1">
 <a href="{{ route('artesaos')}}">
   <div id="artesaos" title="Clique para ver os artesãos">
 
@@ -37,9 +37,9 @@
     <div id="content">Aqui pode ver as noticas, mais recentes, mais vistas, noticias de descontos futuros</div>
   </div>
 </a>
-</div>
+</section>
 
-<div id="parte2">
+<section id="parte2">
       <h1 id="videoTit">Video Promocial</h1>
   <div id="video">
 
@@ -47,17 +47,17 @@
   
   
   </div>
-</div>
+</section>
 
 
-<div id="parte3">
+<section id="parte3">
   <h1 style="margin-bottom:20px; font-family:'itim';">Receba Agora As Novidades</h1>
 
   <div id="contentSub">Subscreve-te á nosssa plataforma pra que possas receber noticias, novidades e descontos novos em nosso produtos</div>
 
   <input type="email" name="emailSub" id="inputEmail" placeholder="Insira Seu Email ...">
   <button type="submit" id="confirmarEmail">Subscrever</button>
-</div>
+</section>
 @endsection
 
 
