@@ -1,10 +1,10 @@
 
 body{
-  background: rgb(210,180,140);
-  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%);
-  background-repeat: no-repeat;
-  margin: 50px;
-  height: auto;
+  background: rgb(210,180,140) !important;
+  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%) !important;
+  background-repeat: no-repeat !important;
+  margin: 50px !important;
+  height: auto !important;
   }
 
   .navbar{
@@ -13,130 +13,130 @@ body{
   }
   
 a{
-  color: black;
+  color: black !important;
 }
 
 #artesaos, #produtos, #feiras{
-  box-shadow: 5px 5px 15px 15px gray;
+  box-shadow: 5px 5px 15px 15px gray !important;
   
-  background: rgb(210,180,140);
-  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%);
-  height: 500px;
-  width: 500px;
-  margin-top: 100px;
-  margin-right: 50px;
-  margin-left: 50px;
-  border-radius: 20px;
-  opacity: 80%;
+  background: rgb(210,180,140) !important;
+  background: linear-gradient(180deg, rgba(210,180,140,1) 48%, rgba(209,207,172,1) 86%) !important;
+  height: 500px !important;
+  width: 500px !important;
+  margin-top: 100px !important;
+  margin-right: 50px !important;
+  margin-left: 50px !important;
+  border-radius: 20px !important;
+  opacity: 80% !important;
 }
 
 #artesaos, #produtos{
-  float: left;
+  float: left !important;
 }
 
 #feiras{
-  float: right;
+  float: right !important;
 }
 
 #titulo{
-  font-size: 20pt;
-  font-family: 'itim', 'sans serif';
-  text-align: center;
-  padding: 20px;
+  font-size: 20pt !important;
+  font-family: 'itim', 'sans serif' !important;
+  text-align: center !important;
+  padding: 20px !important;
 }
 
 #img{
-  margin: 10px auto;
-  display: flex;
-  border-radius: 15px;
+  margin: 10px auto !important;
+  display: flex !important;
+  border-radius: 15px !important;
 }
 
 #content{
-  font-size: 15pt;
-  text-align: justify;
-  font-family: 'itim';
-  padding: 20px;
+  font-size: 15pt !important;
+  text-align: justify !important;
+  font-family: 'itim' !important;
+  padding: 20px !important;
 }
 
 #artesaos:hover, #produtos:hover, #feiras:hover{
 
-  margin-top: 120px;
-  opacity: 120%;
-  cursor: pointer;
+  margin-top: 120px !important;
+  opacity: 120% !important;
+  cursor: pointer !important;
 
 }
 
 #artesaos:active, #produtos:active, #feiras:active{
 
-  margin-top: 130px;
-  opacity: 120%;
-  cursor: pointer;
-  box-shadow: none;
+  margin-top: 130px !important;
+  opacity: 120% !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
 
-  box-shadow: -10px 15px 15px gray;
+  box-shadow: -10px 15px 15px gray !important;
 }
 
 #video{
-  margin: 50px auto;
-  display: flex;
-  justify-content: space-around;
-  background: rgb(92,87,7);
-  background: radial-gradient(circle, rgba(92,87,7,1) 25%, rgba(210,180,140,0) 88%);
+  margin: 50px auto !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  background: rgb(92,87,7) !important;
+  background: radial-gradient(circle, rgba(92,87,7,1) 25%, rgba(210,180,140,0) 88%) !important;
 }
 
 #parte1{
   background-color: transparent !important;
-  height:  725px;
+  height:  725px !important;
 }
 
 #parte2{
   background-color: transparent !important;
-  height:  700px;
+  height:  700px !important;
   text-decoration: none !important;
 }
 
 #parte3{
   background-color: transparent !important;
-  height:  500px;
+  height:  500px !important;
   text-decoration: none !important;
 }
 
 #videoTit{
-  text-align: center; 
-  margin-top: 20px;
-  font-family:'itim';
-  font-size: 30pt;
+  text-align: center !important; 
+  margin-top: 20px !important;
+  font-family:'itim' !important;
+  font-size: 30pt !important;
 }
 
 #contentSub{
-  font-family: 'itim';
-  margin: 10px auto;
+  font-family: 'itim' !important;
+  margin: 10px auto !important;
 }
 
 #inputEmail{
-  width: 400px;
-  height: 50px;
-  font-size: 18pt;
-  border-radius: 10px;
-  border: none;
-  margin-top: 50px;
-  font-family: 'itim';
+  width: 400px !important;
+  height: 50px !important;
+  font-size: 18pt !important;
+  border-radius: 10px !important;
+  border: none !important;
+  margin-top: 50px !important;
+  font-family: 'itim' !important;
 }
 
 #confirmarEmail{
-  width: 200px;
-  height: 50px;
-  background-color: blue;
-  color: white;
-  font-size: 18pt;
-  border: none;
-  border-radius: 10px;
-  font-family: 'itim';
+  width: 200px !important;
+  height: 50px !important;
+  background-color: blue !important;
+  color: white !important;
+  font-size: 18pt !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: 'itim' !important;
 }
 
 #confirmarEmail:hover{
-  cursor: pointer;
-  background-color: white;
-  border: 3px solid blue;
-  color: blue;
+  cursor: pointer !important;
+  background-color: white !important;
+  border: 3px solid blue !important;
+  color: blue !important;
 }
