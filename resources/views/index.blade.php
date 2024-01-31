@@ -30,11 +30,11 @@
 </a>
 
 
-<a href="{{ route('produtos')}}">
-  <div id="produtos" title="Clique para ver os produtos">
+<a href="{{ route('noticias')}}">
+  <div id="produtos" title="Clique para ver as noticias">
     <div id="titulo">Produtos</div>
-    <img src="{{ asset('img/produtos.jpeg')}}" alt="Artesãos" width="400px" id="img">
-    <div id="content">Lista de Produtos feitos pelos artesãos da plataforma, preço de cada um, onde poderá também aceder á loja online da associação, e consequentemente poderá comprar alguma coisa</div>
+    <img src="{{ asset('img/produtos.jpeg')}}" alt="Noticias" width="400px" id="img">
+    <div id="content">Aqui pode ver as noticas, mais recentes, mais vistas, noticias de descontos futuros</div>
   </div>
 </a>
 </section>

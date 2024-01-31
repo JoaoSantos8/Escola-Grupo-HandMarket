@@ -26,11 +26,9 @@ Route::get('/feira', [PageController::class,'feira'])->name('feira');
 
 Route::get('/patrocinadores', [PageController::class,'patrocinadores'])->name('patrocinadores');
 
-Route::get('/artesaos', [PageController::class,'artesaos'])->name('artesao');
-
-Route::get('/produtos/{artesao_id}', [PageController::class, 'produtos'])->name('produtos');
-
 Route::get('/signup', [PageController::class,'signup'])->name('signup');
+
+Route::get('/logar', [PageController::class,'logar'])->name('logar');
 
 Route::get('/noticias', [PageController::class,'noticia'])->name('noticia');
 
@@ -39,6 +37,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); 
 
 Route::get('/feiras', [App\Http\Controllers\FeiraController::class, 'index'])->name('feiras');
+
+Route::get('/artesaos', [App\Http\Controllers\ArtesaoController::class, 'index'])->name('artesaos');
+
+Route::get('/noticias', [App\Http\Controllers\ProdutoController::class, 'index'])->name('noticias');
 
 Route::resource('admin/users', UserController::class, ['as' => 'admin']);
 
